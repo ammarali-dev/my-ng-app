@@ -1,1 +1,11 @@
-<p>I am server component</p>
+<!-- Data Binding with String Interpolation -->
+<!-- Styling with directive -->
+<p
+  [ngStyle]="{ backgroundColor: getColor() }"
+  [ngClass]="{
+    online: serverStatus === 'online',
+    offline: serverStatus === 'offline'
+  }"
+>
+  {{ "Server" }} with ID {{ serverID }} is {{ getServerStatus() }}
+</p>

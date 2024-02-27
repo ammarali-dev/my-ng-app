@@ -4,12 +4,19 @@ import { Component } from '@angular/core';
   // selector should be unique
   selector: 'app-server',
   templateUrl: './server.component.html',
-  styles: [
-    `
-      p {
-        color: pink;
-      }
-    `,
-  ],
+  styleUrl: './server.component.css',
 })
-export class ServerComponent {}
+export class ServerComponent {
+  serverID = 1;
+  serverStatus = 'Offline';
+
+  constructor() {
+    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+  }
+  getServerStatus() {
+    return this.serverStatus;
+  }
+  getColor() {
+    return this.serverStatus === 'online' ? 'green' : 'red';
+  }
+}

@@ -1,0 +1,12 @@
+<button class="btn btn-info" (click)="toggleShowDetails($event)">
+  Display Details
+</button>
+<p *ngIf="showDetails">Secret Password = tuna</p>
+
+<p
+  *ngFor="let item of logs; index as i"
+  [ngStyle]="{ 'background-color': i >= 5 ? 'blue' : 'white' }"
+  [ngClass]="{ 'clr-white': i >= 5 }"
+>
+  {{ item }}
+</p>
